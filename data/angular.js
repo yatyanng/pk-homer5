@@ -1267,9 +1267,11 @@ function toJson(obj, pretty) {
  * @returns {Object|Array|string|number} Deserialized JSON string.
  */
 function fromJson(json) {
-  return isString(json)
-      ? JSON.parse(json)
-      : json;
+  if (isString(json)) {
+    var trimmedJson = json.replace(/\\\\"/g,"\"");
+    return JSON.parse(trimmedJson);
+  }
+  return json;
 }
 
 
