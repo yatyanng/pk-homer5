@@ -23,7 +23,7 @@ RUN git clone https://github.com/yatyanng/homer-api.git /homer-api \
 COPY data/configuration.php /var/www/html/api/configuration.php 
 COPY data/preferences.php /var/www/html/api/preferences.php
 COPY data/vhost.conf /etc/apache2/sites-enabled/000-default.conf
-
+COPY data/angular.js /var/www/html/lib/angular/angular.js
 RUN touch /var/log/cron.log \ 
  && echo "30 3 * * * /opt/homer_pgsql_rotate >> /var/log/cron.log 2>&1" > /etc/cron.d/homer_pgsql_rotate.conf 
 COPY data/apache2.conf /etc/apache2/apache2.conf

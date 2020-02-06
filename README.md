@@ -10,4 +10,4 @@ BUILD:
 docker build . -t pk-homer5
 
 RUN:
-docker run -ti -p 192.168.135.223:80:80 pk-homer5:latest --dbhost 192.168.135.223
+docker run -ti -p 172.31.122.159:80:80 pk-homer5:latest --dbhost 172.31.122.159
