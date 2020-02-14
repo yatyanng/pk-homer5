@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Set correct bin path if we are running as a cron job
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+bin_dir=/opt
+cd $bin_dir
+programm="$bin_dir/homer_pgsql_rotate.pl"
+config="$bin_dir/rotation.ini"
+echo $programm $config
+$programm $config >> /var/log/messages
+
